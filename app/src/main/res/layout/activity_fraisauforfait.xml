@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fraisauforfait"
+    android:orientation="vertical"
+    >
+    <include layout="@layout/entete" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="Frais au forfait"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:labelFor="@id/main_spinner_types"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="#000000"
+        android:padding="8dp"
+        android:text="Types:"
+        android:textColor="#F44336"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/main_spinner_types"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:autofillHints="Selectionner un type de forfait"
+        android:backgroundTint="#DDDFDB"
+        android:entries="@array/typeForfait"
+        android:outlineProvider="background" />
+    <TextView
+        android:labelFor="@id/main_edittext_quantiteFraisauforfait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Quantité:"
+        android:textColor="#F44336"
+        />
+    <EditText
+        android:id="@+id/main_edittext_quantiteFraisauforfait"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Entrez quantité"
+        />
+    <TextView
+        android:id="@+id/textview_textsomme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text=""
+        />
+    <TextView
+        android:labelFor="@id/main_edittext_datedeladepense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="Date de la dépense:"
+        android:textColor="#F44336"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <EditText
+            android:id="@+id/main_edittext_datedeladepense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="JJ/MM/AAAA"
+            />
+
+        <ImageView
+            android:id="@+id/main_imageView_datedeladepense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+    </LinearLayout>
+</LinearLayout>

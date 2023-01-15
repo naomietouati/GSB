@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#F4EFEF"
+    android:foregroundTint="#F44336"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/main_ImageButton_flecheretour"
+        android:layout_width="21dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:foregroundTint="@color/white"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        app:tint="#F44336"
+        android:onClick="fermer_fenetre"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:foregroundTint="@color/white"
+        tools:srcCompat="@drawable/logo_gsb_v" />
+
+</LinearLayout>
