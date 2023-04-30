@@ -26,6 +26,7 @@ public class Fraisauforfait extends MainActivity {
     int jj=calendrier.get(Calendar.DAY_OF_MONTH);
     int mm=calendrier.get(Calendar.MONTH);
     int aaaa=calendrier.get(Calendar.YEAR);
+    double montantCalcule;
 
 
     @Override
@@ -77,7 +78,25 @@ public class Fraisauforfait extends MainActivity {
                         // et qu'on a selectionne l'une des 4 possibilités et si la date est renseignée
                         afficherMessage("Erreur!", "Champ vide");
                         return;
+                    }else if (maDate.getText().toString().trim().length()>10 || maDate.getText().toString().trim().length()<8 ) {
+                        //test sur la validité du champ date
+                        afficherMessage("Erreur!", "Date invalide");
+                        return;
+                    } else if (Integer.parseInt(txtQte1.getText().toString())<1){ //teste si la quantite est au moins 1
+                        afficherMessage("Erreur!", "Quantité invalide");
+                        return;
+                    }else {
+                        Integer quantite = Integer.parseInt(String.valueOf(txtQte1.getText()));
+                        String forfait = listeforfait1.getSelectedItem().toString();
+                        String dateForfait = maDate.getText().toString();
+                        int posForfait = listeforfait1.getSelectedItemPosition();
+                         montantCalcule= quantite * Float.parseFloat(valeurs[posForfait]);
+                        if (database.insertData(forfait, quantite, dateForfait, montantCalcule, forfait)) {
+                            afficherMessage("Succès", "Valeur ajoutée. " + "Montant= " + montantCalcule +"€");
+                            return;
+                        }
                     }
+                    break;
             }
         }
 

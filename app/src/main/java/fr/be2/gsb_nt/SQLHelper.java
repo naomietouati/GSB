@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class SQLHelper extends SQLiteOpenHelper {
     //declaration des variables
@@ -18,6 +19,9 @@ public class SQLHelper extends SQLiteOpenHelper {
     public static final String MONTANT = "MONTANT";
     public static final String DATE_SAISIE = "DATE_SAISIE";
     public static final String LIBELLE = "LIBELLE";
+
+
+    private static final String TAG = "CountriesDbAdapter";
 
 
     /**
@@ -96,7 +100,7 @@ public class SQLHelper extends SQLiteOpenHelper {
     }
     public Cursor fetchAllFrais() {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor mCursor = db.query(DB_TABLE, new String[] {DATE_FRAIS,
+        Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",DATE_FRAIS,
                         MONTANT, DATE_SAISIE ,LIBELLE},
                 null, null, null, null, null);
 
@@ -105,6 +109,18 @@ public class SQLHelper extends SQLiteOpenHelper {
         }
         return mCursor;
     }
+    public Cursor fetchFrais(String filtre) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",DATE_FRAIS,
+                        MONTANT, DATE_SAISIE ,LIBELLE},
+                filtre, null, null, null, null);
+
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+
 
     public SQLHelper open() throws SQLException {
         SQLiteDatabase db = this.getWritableDatabase();
