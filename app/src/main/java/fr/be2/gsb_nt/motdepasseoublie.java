@@ -1,14 +1,14 @@
-package fr.be2.gsb;
+package fr.be2.gsb_nt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Parametre extends AppCompatActivity {
+public class motdepasseoublie extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_parametre);
+        setContentView(R.layout.activity_motdepasseoublie);
     }
 }

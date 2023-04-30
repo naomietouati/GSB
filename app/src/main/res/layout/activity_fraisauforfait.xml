@@ -61,6 +61,34 @@
         android:layout_marginEnd="16dp"
         android:hint="Entrez quantité"
         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:labelFor="@+id/main_datedeladepense"
+            android:padding="8dp"
+            android:text="Date de la dépense:"
+            android:textColor="#F44336"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:baselineAlignBottom="false"
+            android:longClickable="false"
+            android:onClick="ShowCal"
+            android:scaleType="centerInside"
+            app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+    </LinearLayout>
     <TextView
         android:id="@+id/textview_textsomme"
         android:layout_width="wrap_content"
@@ -68,34 +96,22 @@
         android:layout_marginLeft="16dp"
         android:text=""
         />
-    <TextView
-        android:labelFor="@id/main_edittext_datedeladepense"
+
+    <Button
+        android:id="@+id/main_btn_ajouterFrais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_margin="8dp"
-        android:padding="8dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="Date de la dépense:"
-        android:textColor="#F44336"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-        <EditText
-            android:id="@+id/main_edittext_datedeladepense"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:hint="JJ/MM/AAAA"
-            />
-
-        <ImageView
-            android:id="@+id/main_imageView_datedeladepense"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_menu_my_calendar" />
-    </LinearLayout>
+        android:backgroundTint="#F35805"
+        android:paddingBottom="8dp"
+        android:text="Ajouter"
+        android:onClick="MonClick"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+    <TextView
+    android:id="@+id/txtsomme"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text=""/>
 </LinearLayout>

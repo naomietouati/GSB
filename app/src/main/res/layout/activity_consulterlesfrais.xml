@@ -20,46 +20,13 @@
         android:text="Consulter les frais"
         android:textColor="@color/black"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="Date Frais:"
-        android:textColor="@color/black"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="libellé Frais:"
-        android:textColor="@color/black"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="Montant:"
-        android:textColor="@color/black"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="Date et heure de la saisie:"
-        android:textColor="@color/black"
-        />
+    <EditText android:id="@+id/myFilter" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:ems="10"
+        android:hint="Saisir un filtre">
+        <requestFocus />
+    </EditText>
 
-        />
+    <ListView android:id="@+id/listView1" android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
 </LinearLayout>

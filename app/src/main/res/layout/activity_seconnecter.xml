@@ -76,7 +76,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/main_edittext_Seconnecter"
+            android:id="@+id/main_edittext_saisiecodealeatoire"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
