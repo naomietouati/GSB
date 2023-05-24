@@ -9,6 +9,7 @@
     android:orientation="vertical"
     >
     <include layout="@layout/entete"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,11 +23,14 @@
         />
     <EditText android:id="@+id/myFilter" android:layout_width="match_parent"
         android:layout_height="wrap_content" android:ems="10"
-        android:hint="Saisir un filtre">
+        android:hint="Entrez une date">
         <requestFocus />
     </EditText>
 
-    <ListView android:id="@+id/listView1" android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbarAlwaysDrawVerticalTrack="?android:attr/fastScrollThumbDrawable" />
 
 </LinearLayout>

@@ -33,6 +33,7 @@ public class Fraisauforfait extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fraisauforfait);
+        AfficherVisiteur();
         //on initialise la variable database en instanciant la classe SQLHelper
         database = new SQLHelper(this);
         txtQte1 = findViewById(R.id.main_edittext_quantiteFraisauforfait);

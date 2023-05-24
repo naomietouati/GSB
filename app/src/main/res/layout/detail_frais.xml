@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -9,16 +10,13 @@
         android:id="@+id/textview1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textStyle="bold"
-        android:layout_margin="8dp"
         android:padding="8dp"
+        android:text="ID Frais:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#F44336"
         android:textSize="16sp"
-        android:text="Date Frais:"
-        android:textColor="@color/black"
-        />
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/textview2"
         android:layout_width="wrap_content"
@@ -27,10 +25,12 @@
         android:layout_below="@+id/textview1"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:textColor="#F44336"
         android:padding="8dp"
         android:textSize="16sp"
-        android:text="Libellé Frais:"
-        android:textColor="@color/black"
+        android:text="Date Frais:"
+
         />
     <TextView
         android:id="@+id/textview3"
@@ -42,8 +42,8 @@
         android:textStyle="bold"
         android:padding="8dp"
         android:textSize="16sp"
-        android:text="Montant:"
-        android:textColor="@color/black"
+        android:text="Libellé Frais:"
+        android:textColor="#F44336"
         />
     <TextView
         android:id="@+id/textview4"
@@ -55,19 +55,46 @@
         android:textStyle="bold"
         android:padding="8dp"
         android:textSize="16sp"
-        android:text="Date et heure de la saisie:"
-        android:textColor="@color/black"
+        android:text="Montant:"
+        android:textColor="#F44336"
         />
     <TextView
-        android:id="@+id/dateFrais"
+        android:id="@+id/textview5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textview4"
+        android:layout_below="@+id/textview4"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:text="Date et heure de la saisie:"
+        android:textColor="#F44336"
+        />
+
+    <TextView
+        android:id="@+id/textview6"
+        android:layout_width="64dp"
+        android:layout_height="97dp"
+        android:layout_below="@+id/textview4"
+        android:layout_alignLeft="@+id/textview5"
+        android:padding="16dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/idFrais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textview1"
         android:layout_alignBottom="@+id/textview1"
         android:layout_toRightOf="@+id/textview1"
         android:text="TextView" />
+
     <TextView
-        android:id="@+id/libelleFrais"
+        android:id="@+id/dateFrais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textview2"
@@ -75,7 +102,7 @@
         android:layout_toRightOf="@+id/textview2"
         android:text="TextView" />
     <TextView
-        android:id="@+id/montant"
+        android:id="@+id/libelleFrais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textview3"
@@ -83,12 +110,35 @@
         android:layout_toRightOf="@+id/textview3"
         android:text="TextView" />
     <TextView
-        android:id="@+id/infoSaisie"
+        android:id="@+id/montant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textview4"
         android:layout_alignBottom="@+id/textview4"
         android:layout_toRightOf="@+id/textview4"
         android:text="TextView" />
+    <TextView
+        android:id="@+id/infoSaisie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textview5"
+        android:layout_alignBottom="@+id/textview5"
+        android:layout_toRightOf="@+id/textview5"
+        android:text="TextView" />
+
+    <ImageButton
+        android:id="@+id/deleteFrais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textview6"
+        android:layout_alignBottom="@+id/textview6"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="25dp"
+        android:background="@android:drawable/ic_menu_delete"
+         />
+
+
 </RelativeLayout>
+
 

@@ -7,6 +7,8 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 public class SQLHelper extends SQLiteOpenHelper {
     //declaration des variables
@@ -19,7 +21,6 @@ public class SQLHelper extends SQLiteOpenHelper {
     public static final String MONTANT = "MONTANT";
     public static final String DATE_SAISIE = "DATE_SAISIE";
     public static final String LIBELLE = "LIBELLE";
-
 
     private static final String TAG = "CountriesDbAdapter";
 
@@ -83,7 +84,7 @@ public class SQLHelper extends SQLiteOpenHelper {
      * @return booleen
      */
 
-    public boolean insertData(String typeForfait, Integer quantite, String dateForfait, double montant, String libelle) {
+    public boolean insertData(String typeForfait, Integer quantite, String dateForfait, double montant, String libelle){
         //on cree une variable de type sqLitedatabase pr pouvoir y acceder
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -92,6 +93,9 @@ public class SQLHelper extends SQLiteOpenHelper {
         contentValues.put(DATE_FRAIS, dateForfait);
         contentValues.put(MONTANT, montant);
         contentValues.put(LIBELLE, libelle);
+
+
+
         //insert sert a inserer des donnees, elle insere ds notre table contentValue les contenus
         // des variables que l'utilisateur renseigne
         long result = db.insert(DB_TABLE, null, contentValues);
@@ -101,7 +105,7 @@ public class SQLHelper extends SQLiteOpenHelper {
     public Cursor fetchAllFrais() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",DATE_FRAIS,
-                        MONTANT, DATE_SAISIE ,LIBELLE},
+                        MONTANT, DATE_SAISIE ,LIBELLE,ID_FRAIS},
                 null, null, null, null, null);
 
         if (mCursor != null) {
@@ -109,17 +113,18 @@ public class SQLHelper extends SQLiteOpenHelper {
         }
         return mCursor;
     }
-    public Cursor fetchFrais(String filtre) {
+    public Cursor fetchFraisByDate(String InputString) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",DATE_FRAIS,
-                        MONTANT, DATE_SAISIE ,LIBELLE},
-                filtre, null, null, null, null);
+        Cursor mCursor = db.query(DB_TABLE, new String[] { "rowid _id",ID_FRAIS, DATE_FRAIS,
+                        MONTANT, DATE_SAISIE , LIBELLE},
+                DATE_FRAIS + " like '%" + InputString + "%'",null,null, null, null, null);
 
         if (mCursor != null) {
             mCursor.moveToFirst();
         }
         return mCursor;
     }
+
 
 
     public SQLHelper open() throws SQLException {
@@ -128,9 +133,11 @@ public class SQLHelper extends SQLiteOpenHelper {
 
     }
 
-
-
-
+    public boolean deleteData(Integer ID){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(DB_TABLE, "ID_FRAIS=" + ID_FRAIS, null);
+        return result != -1;
+    }
 }
 
 

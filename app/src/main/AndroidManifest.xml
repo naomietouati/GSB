@@ -13,28 +13,7 @@
         android:theme="@style/Theme.GSB"
         tools:targetApi="31">
         <activity
-            android:name=".inscription"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".seconnecter"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".motdepasseoublie"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".historiquedesenvois"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
