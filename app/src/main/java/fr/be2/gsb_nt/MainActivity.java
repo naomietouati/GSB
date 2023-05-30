@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         secure();
         setContentView(R.layout.activity_main);
-        setContentView(R.layout.entete);
+        //setContentView(R.layout.entete);
         NomPrenomV = findViewById(R.id.affichageV);
         AfficherVisiteur();
     }
